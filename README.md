@@ -18,7 +18,7 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 	- Storage : at least SSD 256GB
 
 ## Environment Requirements
-![EnvRequirement2](https://github.com/kyungeunvoyage/DualKinect_1M_Collect/assets/86193432/40e35782-fff2-4439-b988-7cd981d4c137)
+![EnvRequirement3](https://github.com/kyungeunvoyage/DualKinect_1M_Collect/assets/86193432/74e60a9e-a5b8-418d-b658-96a3c2d45ffd)
 1. We need a space at least 6m*6m (there should be no mirrors in front of each devices)
 1. Heights of each Azure Kinects need to be same and at least 1.5m 
 1. Dancers should be apart from the Azure kinect at least 1.5m ~ 2m
