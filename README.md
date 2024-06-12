@@ -4,9 +4,10 @@ This is a guideline for using dual Azure Kinect to record body tracking data to 
 
 Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated before 6/21)
 
-##Hardware and Software Prerequisite
+## Hardware and Software Requirements
 1. 2 Azure Kinect DK 
 1. 1 Host PC (desktop)
+1. 1 powered usb hub
 
 ## Hardware Prerequisite
 1. Required PC :
@@ -16,8 +17,8 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 	- GPU : at least NVIDIA GTX 1070
 	- Storage : at least SSD 256GB
 
-##Environment Requirements
-![screenshot](EnvRequirements.png)
+## Environment Requirements
+![image](C:\Users\HCITECH_01\Downloads\EnvRequirements.png)
 1. We need a space at least 6m*6m (there should be no mirrors in front of each devices)
 1. Heights of each Azure Kinects need to be same and at least 1.5m 
 1. Dancers should be apart from the Azure kinect at least 1.5m ~ 2m
