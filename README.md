@@ -25,7 +25,7 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 
 
 ## Steps 
-1. Execute the kinectSimpleBodyTrackingCSVRecorder.exe 
+1. Run `kinectSimpleBodyTrackingCSVRecorder.exe`.
 	- (location : kinectSimpleBodyTrackingCSVRecorder\bin\x64\Debug\net6.0-windows)
 1. Fill out the name of the dancer 
 1. Fill out the song number 
