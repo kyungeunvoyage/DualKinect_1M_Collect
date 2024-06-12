@@ -155,14 +155,14 @@ namespace KinectRecordingApp
                                 {
                                     var skeleton1 = frame1.GetBodySkeleton(0);
                                     ProcessSkeleton(skeleton1, eulerSw, quatSw);
-                                    //DrawSkeleton(device1.GetColorImage(), skeleton1);
+                                    DrawSkeleton(device1.GetColorImage(), skeleton1);
                                 }
 
                                 if (frame2 != null && frame2.NumberOfBodies > 0)
                                 {
                                     var skeleton2 = frame2.GetBodySkeleton(0);
                                     ProcessSkeleton(skeleton2, eulerSw, quatSw);
-                                    //DrawSkeleton(device2.GetColorImage(), skeleton2);
+                                    DrawSkeleton(device2.GetColorImage(), skeleton2);
                                 }
                             }
                             Cv2.WaitKey(1);
@@ -175,42 +175,21 @@ namespace KinectRecordingApp
 
         private void ProcessSkeleton(Skeleton skeleton, StreamWriter eulerSw, StreamWriter quatSw)
         {
-            // Array to hold position and rotation data
-            float[] posData = new float[(int)JointId.Count * 7];
-            float[] quatData = new float[(int)JointId.Count * 8];
-
             for (int i = 0; i < (int)JointId.Count; i++)
             {
                 var joint = skeleton.GetJoint((JointId)i);
-                posData[i * 7] = joint.Position.X;
-                posData[i * 7 + 1] = joint.Position.Y;
-                posData[i * 7 + 2] = joint.Position.Z;
-
-                quatData[i * 8] = joint.Position.X;
-                quatData[i * 8 + 1] = joint.Position.Y;
-                quatData[i * 8 + 2] = joint.Position.Z;
-                quatData[i * 8 + 3] = joint.Quaternion.W;
-                quatData[i * 8 + 4] = joint.Quaternion.X;
-                quatData[i * 8 + 5] = joint.Quaternion.Y;
-                quatData[i * 8 + 6] = joint.Quaternion.Z;
-
                 // Convert quaternion to Euler angles
                 var euler = QuaternionToEuler(joint.Quaternion);
-                posData[i * 7 + 3] = euler.Item1;
-                posData[i * 7 + 4] = euler.Item2;
-                posData[i * 7 + 5] = euler.Item3;
+
+                eulerSw.WriteLine($"{skeleton.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{euler.Item1},{euler.Item2},{euler.Item3}");
+                quatSw.WriteLine($"{skeleton.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{joint.Quaternion.W},{joint.Quaternion.X},{joint.Quaternion.Y},{joint.Quaternion.Z}");
 
                 Console.WriteLine($"Joint {i}: Position=({joint.Position.X}, {joint.Position.Y}, {joint.Position.Z}), " +
                     $"Rotation (Euler)=({euler.Item1}, {euler.Item2}, {euler.Item3})");
             }
-
-            // Write pos and rot data to file
-            eulerSw.WriteLine(string.Join(",", posData));
-            quatSw.WriteLine(string.Join(",", quatData));
         }
 
         // Function to draw skeleton on the image
-        /*
         private void DrawSkeleton(Image colorImage, Skeleton skeleton)
         {
             using (Mat colorMat = new Mat(colorImage.HeightPixels, colorImage.WidthPixels, MatType.CV_8UC4, colorImage.GetBuffer()))
@@ -218,15 +197,14 @@ namespace KinectRecordingApp
                 for (int i = 0; i < (int)JointId.Count; i++)
                 {
                     var joint = skeleton.GetJoint((JointId)i);
-                    Cv2.Circle(colorMat, new Point(joint.Position.X, joint.Position.Y), 5, Scalar.Red, -1);
+                    var point = new Point(joint.Position.X, joint.Position.Y);
+                    Cv2.Circle(colorMat, point, 5, Scalar.Red, -1);
                 }
 
                 Cv2.ImShow("Kinect RGB View with Skeleton", colorMat);
                 Cv2.WaitKey(1);
             }
         }
-        */
-
 
         // Function to convert quaternion to Euler angles (x, y, z)
         static Tuple<float, float, float> QuaternionToEuler(Quaternion quaternion)
