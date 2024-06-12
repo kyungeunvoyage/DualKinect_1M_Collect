@@ -1,7 +1,34 @@
 # Kinect Simple Body Tracking CSV Recorder
 
 This is a guideline for using dual Azure Kinect to record body tracking data to a csv file.
-Hi
+
+Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated before 6/21)
+
+##Hardware and Software Prerequisite
+1. 2 Azure Kinect DK 
+1. 1 Host PC (desktop)
+
+## Hardware Prerequisite
+1. Required PC :
+	- OS : Windows 10(x64)
+	- CPU : Quad-core 2.4 GHz or faster processor (8th Generation Intel® Core™ i5 or higher)
+	- RAM : 8GB
+	- GPU : at least NVIDIA GTX 1070
+	- Storage : at least SSD 256GB
+
+##Environment Requirements
+![screenshot](EnvRequirements.png)
+1. We need a space at least 6m*6m (there should be no mirrors in front of each devices)
+1. Heights of each Azure Kinects need to be same and at least 1.5m 
+1. Dancers should be apart from the Azure kinect at least 1.5m ~ 2m
+
+
+## Steps 
+1. Execute the kinectSimpleBodyTrackingCSVRecorder.exe 
+	- (location : kinectSimpleBodyTrackingCSVRecorder\bin\x64\Debug\net6.0-windows)
+1. Fill out the name of the dancer 
+1. Fill out the song number 
+1. Fill out the trial number. 
 
 ## Usage
 
@@ -9,16 +36,13 @@ Hi
 1. Download this tool. (→ [Release page](https://github.com/Hashory/kinectSimpleBodyTrackingCSVRecorder/releases))
 1. Run `kinectSimpleBodyTrackingCSVRecorder.exe`.
 
+
 ## CSV file format
 
 The CSV file contains the following information.  
-There are 32 joints in total, each with three coordinates (x, y, z). Therefore, there are 96 rows in total.  
+There are 32 joints in total, each with three coordinates (x, y, z) -> it will exported in euler as well as quaternion .
 See [here](https://learn.microsoft.com/en-us/azure/kinect-dk/body-joints#joint-hierarchy) for joint order and more information.  
 
-**CSV format:**
-```csv
-PELVIS.x, PELVIS.y, PELVIS.z, SPINE_NAVAL.x, ･･･  EAR_RIGHT.y, EAR_RIGHT.z
-```
 
 Also, be careful with the coordinate system. Azure kinect uses [this](https://learn.microsoft.com/en-us/azure/kinect-dk/coordinate-systems#3d-coordinate-systems).
 

@@ -5,10 +5,8 @@ using System.IO;
 using System.Numerics;
 using System.Threading;
 using System.Windows.Forms;
-using OpenCvSharp;
 
 using AzureTracker = Microsoft.Azure.Kinect.BodyTracking.Tracker;
-using Cv2Tracker = OpenCvSharp.Tracker;
 
 namespace KinectRecordingApp
 {
@@ -66,7 +64,6 @@ namespace KinectRecordingApp
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            //var dancerNameInput = (TextBox)this.Controls.Find("DancerNameInput", true)[0];
             var dancerNameInput = (TextBox)this.Controls.Find("DancerNameInput", true)[0];
             var danceNumberInput = (NumericUpDown)this.Controls.Find("DanceNumberInput", true)[0];
             var trialNumberInput = (NumericUpDown)this.Controls.Find("TrialNumberInput", true)[0];
@@ -137,8 +134,6 @@ namespace KinectRecordingApp
                         eulerSw.WriteLine("BodyID,JointIndex,PosX,PosY,PosZ,Roll,Pitch,Yaw");
                         quatSw.WriteLine("BodyID,JointIndex,PosX,PosY,PosZ,OriW,OriX,OriY,OriZ");
 
-                        Cv2.NamedWindow("Kinect RGB View with Skeleton", WindowFlags.Normal);
-
                         while (isRecording)
                         {
                             using (Capture sensorCapture1 = device1.GetCapture())
@@ -146,63 +141,43 @@ namespace KinectRecordingApp
                             {
                                 tracker1.EnqueueCapture(sensorCapture1);
                                 tracker2.EnqueueCapture(sensorCapture2);
-                            }
 
-                            using (Frame frame1 = tracker1.PopResult(TimeSpan.Zero, throwOnTimeout: false))
-                            using (Frame frame2 = tracker2.PopResult(TimeSpan.Zero, throwOnTimeout: false))
-                            {
-                                if (frame1 != null && frame1.NumberOfBodies > 0)
+                                using (Frame frame1 = tracker1.PopResult(TimeSpan.Zero, throwOnTimeout: false))
+                                using (Frame frame2 = tracker2.PopResult(TimeSpan.Zero, throwOnTimeout: false))
                                 {
-                                    var skeleton1 = frame1.GetBodySkeleton(0);
-                                    ProcessSkeleton(skeleton1, eulerSw, quatSw);
-                                    DrawSkeleton(device1.GetColorImage(), skeleton1);
-                                }
+                                    if (frame1 != null && frame1.NumberOfBodies > 0)
+                                    {
+                                        var skeleton1 = frame1.GetBodySkeleton(0);
+                                        ProcessSkeleton(frame1, skeleton1, eulerSw, quatSw);
+                                    }
 
-                                if (frame2 != null && frame2.NumberOfBodies > 0)
-                                {
-                                    var skeleton2 = frame2.GetBodySkeleton(0);
-                                    ProcessSkeleton(skeleton2, eulerSw, quatSw);
-                                    DrawSkeleton(device2.GetColorImage(), skeleton2);
+                                    if (frame2 != null && frame2.NumberOfBodies > 0)
+                                    {
+                                        var skeleton2 = frame2.GetBodySkeleton(0);
+                                        ProcessSkeleton(frame2, skeleton2, eulerSw, quatSw);
+                                    }
                                 }
                             }
-                            Cv2.WaitKey(1);
                         }
-                        Cv2.DestroyAllWindows();
                     }
                 }
             }
         }
 
-        private void ProcessSkeleton(Skeleton skeleton, StreamWriter eulerSw, StreamWriter quatSw)
+        private void ProcessSkeleton(Frame frame, Skeleton skeleton, StreamWriter eulerSw, StreamWriter quatSw)
         {
+            var body = frame.GetBody(0);
             for (int i = 0; i < (int)JointId.Count; i++)
             {
                 var joint = skeleton.GetJoint((JointId)i);
                 // Convert quaternion to Euler angles
                 var euler = QuaternionToEuler(joint.Quaternion);
 
-                eulerSw.WriteLine($"{skeleton.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{euler.Item1},{euler.Item2},{euler.Item3}");
-                quatSw.WriteLine($"{skeleton.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{joint.Quaternion.W},{joint.Quaternion.X},{joint.Quaternion.Y},{joint.Quaternion.Z}");
+                eulerSw.WriteLine($"{body.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{euler.Item1},{euler.Item2},{euler.Item3}");
+                quatSw.WriteLine($"{body.Id},{i},{joint.Position.X},{joint.Position.Y},{joint.Position.Z},{joint.Quaternion.W},{joint.Quaternion.X},{joint.Quaternion.Y},{joint.Quaternion.Z}");
 
                 Console.WriteLine($"Joint {i}: Position=({joint.Position.X}, {joint.Position.Y}, {joint.Position.Z}), " +
                     $"Rotation (Euler)=({euler.Item1}, {euler.Item2}, {euler.Item3})");
-            }
-        }
-
-        // Function to draw skeleton on the image
-        private void DrawSkeleton(Image colorImage, Skeleton skeleton)
-        {
-            using (Mat colorMat = new Mat(colorImage.HeightPixels, colorImage.WidthPixels, MatType.CV_8UC4, colorImage.GetBuffer()))
-            {
-                for (int i = 0; i < (int)JointId.Count; i++)
-                {
-                    var joint = skeleton.GetJoint((JointId)i);
-                    var point = new Point(joint.Position.X, joint.Position.Y);
-                    Cv2.Circle(colorMat, point, 5, Scalar.Red, -1);
-                }
-
-                Cv2.ImShow("Kinect RGB View with Skeleton", colorMat);
-                Cv2.WaitKey(1);
             }
         }
 
