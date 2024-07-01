@@ -1,0 +1,149 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Microsoft.Azure.Kinect.BodyTracking/1.1.2": {
+        "dependencies": {
+          "Microsoft.Azure.Kinect.BodyTracking.ONNXRuntime": "1.10.0",
+          "Microsoft.Azure.Kinect.Sensor": "1.4.1",
+          "System.Reflection.Emit.Lightweight": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Kinect.BodyTracking.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Kinect.BodyTracking.ONNXRuntime/1.10.0": {},
+      "Microsoft.Azure.Kinect.Sensor/1.4.1": {
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.Kinect.Sensor.dll": {
+            "assemblyVersion": "1.4.1.0",
+            "fileVersion": "1.4.1.3"
+          }
+        }
+      },
+      "OpenCvSharp4/4.5.5.20211231": {
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenCvSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.win/4.5.5.20211231": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg455_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2021.12.0.0"
+          },
+          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg455.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2021.12.0.0"
+          }
+        }
+      },
+      "System.Memory/4.5.4": {},
+      "System.Numerics.Vectors/4.5.0": {},
+      "System.Reflection.Emit.Lightweight/4.6.0": {},
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Azure.Kinect.BodyTracking/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nlwN24l9iNVkjSzUan5hTN1HbT7mvEMApccWCDlh5oFN2ZaODJFqg23QLKfnZSdRxXiie/q/4aPhZ11zeGh2DA==",
+      "path": "microsoft.azure.kinect.bodytracking/1.1.2",
+      "hashPath": "microsoft.azure.kinect.bodytracking.1.1.2.nupkg.sha512"
+    },
+    "Microsoft.Azure.Kinect.BodyTracking.ONNXRuntime/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mflwUV5bbIT8ruTIuwjus8yQ8gxqClJB0wruD3jmh7ovhhLRlelR7DUngY6KM+/KM1VBTA3BF0Yd/+6TTtvUOA==",
+      "path": "microsoft.azure.kinect.bodytracking.onnxruntime/1.10.0",
+      "hashPath": "microsoft.azure.kinect.bodytracking.onnxruntime.1.10.0.nupkg.sha512"
+    },
+    "Microsoft.Azure.Kinect.Sensor/1.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X/vT3Q8gS+5qTU/i3Dj64IBHg90mWE9NRkeHIgiof+fkksGM0UtSCZvIUCUhyTxQmt2i+4bdzI3nL+WqmTKmew==",
+      "path": "microsoft.azure.kinect.sensor/1.4.1",
+      "hashPath": "microsoft.azure.kinect.sensor.1.4.1.nupkg.sha512"
+    },
+    "OpenCvSharp4/4.5.5.20211231": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-if3zWvwJHo4FAupCdrv+B1PN+50MP7OdQHQSiy5Am9/fGepvEzNxbamd3Hk0akKHnLtzsHa5icGta4Vr4lGLQw==",
+      "path": "opencvsharp4/4.5.5.20211231",
+      "hashPath": "opencvsharp4.4.5.5.20211231.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.win/4.5.5.20211231": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hywJLVuHQTHxroPTYWPhj59VIpoPTGoKJYyvHWWs0hnqPLPemnPCWZLJtdehdpf00U6l1QgvARJMFqc3RtSXGQ==",
+      "path": "opencvsharp4.runtime.win/4.5.5.20211231",
+      "hashPath": "opencvsharp4.runtime.win.4.5.5.20211231.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j/V5HVvxvBQ7uubYD0PptQW2KGsi1Pc2kZ9yfwLixv3ADdjL/4M78KyC5e+ymW612DY8ZE4PFoZmWpoNmN2mqg==",
+      "path": "system.reflection.emit.lightweight/4.6.0",
+      "hashPath": "system.reflection.emit.lightweight.4.6.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    }
+  }
+}

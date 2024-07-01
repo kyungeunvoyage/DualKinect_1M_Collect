@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\kinectSimpleBodyTrackingCSVRecorder.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\kinectSimpleBodyTrackingCSVRecorder.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\kinectSimpleBodyTrackingCSVRecorder.csproj",
+        "projectName": "kinectSimpleBodyTrackingCSVRecorder",
+        "projectPath": "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\kinectSimpleBodyTrackingCSVRecorder.csproj",
+        "packagesPath": "C:\\Users\\HCITECH_01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HCITECH_01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.Azure.Kinect.BodyTracking": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
+            "OpenCvSharp4": {
+              "target": "Package",
+              "version": "[4.5.4.20210817, )"
+            },
+            "OpenCvSharp4.runtime.win": {
+              "target": "Package",
+              "version": "[4.5.4.20210817, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.azure.kinect.sensor\1.4.1\build\netstandard2.0\Microsoft.Azure.Kinect.Sensor.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.kinect.sensor\1.4.1\build\netstandard2.0\Microsoft.Azure.Kinect.Sensor.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.azure.kinect.bodytracking.onnxruntime\1.10.0\build\netstandard2.0\Microsoft.Azure.Kinect.BodyTracking.ONNXRuntime.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.kinect.bodytracking.onnxruntime\1.10.0\build\netstandard2.0\Microsoft.Azure.Kinect.BodyTracking.ONNXRuntime.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.azure.kinect.bodytracking\1.1.2\build\netstandard2.0\Microsoft.Azure.Kinect.BodyTracking.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.kinect.bodytracking\1.1.2\build\netstandard2.0\Microsoft.Azure.Kinect.BodyTracking.targets')" />
+  </ImportGroup>
+</Project>

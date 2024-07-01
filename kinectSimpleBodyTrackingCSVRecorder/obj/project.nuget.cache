@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "MTCrDHOAmo9yERCk1gmnJeIFQK3H+4m5A1Y8Yp7I1y6Wzi5v5D0vpH2RUHMYiGf35PlXruWG017eqEQCnj4WYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HCITECH_01\\Desktop\\TestC++toC#\\kinectSimpleBodyTrackingCSVRecorder-1.0.0\\kinectSimpleBodyTrackingCSVRecorder\\kinectSimpleBodyTrackingCSVRecorder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\microsoft.azure.kinect.bodytracking\\1.1.2\\microsoft.azure.kinect.bodytracking.1.1.2.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\microsoft.azure.kinect.bodytracking.onnxruntime\\1.10.0\\microsoft.azure.kinect.bodytracking.onnxruntime.1.10.0.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\microsoft.azure.kinect.sensor\\1.4.1\\microsoft.azure.kinect.sensor.1.4.1.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\opencvsharp4\\4.5.5.20211231\\opencvsharp4.4.5.5.20211231.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\opencvsharp4.runtime.win\\4.5.5.20211231\\opencvsharp4.runtime.win.4.5.5.20211231.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\system.reflection.emit.lightweight\\4.6.0\\system.reflection.emit.lightweight.4.6.0.nupkg.sha512",
+    "C:\\Users\\HCITECH_01\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "kinectSimpleBodyTrackingCSVRecorder은(는) OpenCvSharp4 (>= 4.5.4.20210817)에 종속되어 있지만 OpenCvSharp4 4.5.4.20210817을(를) 찾을 수 없습니다. 대략적으로 가장 잘 일치하는 OpenCvSharp4 4.5.5.20211231이(가) 확인되었습니다.",
+      "libraryId": "OpenCvSharp4",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "kinectSimpleBodyTrackingCSVRecorder은(는) OpenCvSharp4.runtime.win (>= 4.5.4.20210817)에 종속되어 있지만 OpenCvSharp4.runtime.win 4.5.4.20210817을(를) 찾을 수 없습니다. 대략적으로 가장 잘 일치하는 OpenCvSharp4.runtime.win 4.5.5.20211231이(가) 확인되었습니다.",
+      "libraryId": "OpenCvSharp4.runtime.win",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}
