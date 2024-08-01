@@ -23,6 +23,13 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 1. Heights of each Azure Kinects need to be same and at least 1.5m 
 1. Dancers should be apart from the Azure kinect at least 1.5m ~ 2m
 
+##Hardware Setup 
+1. We follow the multicam-sync-daisychain methodology. (take a look at the image below):
+	- Master : Plug in 3.5mm audio cable towards **Sync Out**
+	- Subordinate 1 : Plug in 3.5mm audio cable towards **Sync In**
+2. Open Two instances of Kinect Viewer and follow this url (https://learn.microsoft.com/ko-kr/azure/kinect-dk/multi-camera-sync)
+   **Subordinate should be first connected** -> **Master should be connected lastly**
+
 
 ## Steps 
 1. Run `kinectSimpleBodyTrackingCSVRecorder.exe`
