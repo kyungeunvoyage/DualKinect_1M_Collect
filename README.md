@@ -25,11 +25,14 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 
 ## Hardware Setup 
 1. We follow the multicam-sync-daisychain methodology. (take a look at the image below):
-	- Master : Plug in 3.5mm audio cable towards **Sync Out**
-	- Subordinate 1 : Plug in 3.5mm audio cable towards **Sync In**
-2. Open Two instances of Kinect Viewer and follow this url (https://learn.microsoft.com/ko-kr/azure/kinect-dk/multi-camera-sync)
+        **Connect Subordinate(Slave) first and Master later**
+   	- Subordinate : Device Serial No (000365922612) - Plug in 3.5mm audio cable towards **Sync In**
+	- Master : Device Serial No (000379204512) - Plug in 3.5mm audio cable towards **Sync Out**
+	
+3. Open Two instances of Kinect Viewer and follow this url (https://learn.microsoft.com/ko-kr/azure/kinect-dk/multi-camera-sync)
    **Subordinate should be first connected** -> **Master should be connected lastly**
 
+4. If you want to start recording via exe file, you need to abort kinect viewer instances.
 
 ## Steps 
 1. Run `kinectSimpleBodyTrackingCSVRecorder.exe`
@@ -51,6 +54,9 @@ Real-time Azure Kinect Body Tracker Viewer is not added yet (needs to be updated
 The CSV file contains the following information.  
 There are 32 joints in total, each with three coordinates (x, y, z) -> it will exported in euler as well as quaternion .
 See [here](https://learn.microsoft.com/en-us/azure/kinect-dk/body-joints#joint-hierarchy) for joint order and more information.  
+
+## Update data 
+url : https://drive.google.com/drive/folders/1SHkJU6Iyq7UtwTF2LiLn4aSB8AAbw-o4?usp=sharing 
 
 
 Also, be careful with the coordinate system. Azure kinect uses [this](https://learn.microsoft.com/en-us/azure/kinect-dk/coordinate-systems#3d-coordinate-systems).
